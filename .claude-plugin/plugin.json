@@ -9,6 +9,7 @@
   },
   "homepage": "https://chattermill.com",
   "repository": "https://github.com/chattermill/agent-plugins",
+  "license": "MIT",
   "keywords": [
     "chattermill",
     "mcp",

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "chattermill",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Connect your AI agent to Chattermill customer feedback. Includes the Chattermill MCP server (sign in with your Chattermill account) and the chattermill-best-practices skill, which covers discovery, filters and deep links back into the app.",
   "author": {
     "name": "Chattermill",
@@ -29,9 +29,12 @@
         "longDescription": "Connect your AI agent to Chattermill customer feedback. Includes the Chattermill MCP server (sign in with your Chattermill account) and the chattermill-best-practices skill, which covers discovery, filters and deep links back into the app.",
         "developerName": "Chattermill",
         "websiteURL": "https://chattermill.com",
+        "supportURL": "https://chattermill.com/contact",
         "privacyPolicyURL": "https://chattermill.com/legal/privacy-cookie-policy",
         "termsOfServiceURL": "https://chattermill.com/legal",
-        "brandColor": "#10C2ED"
+        "brandColor": "#10C2ED",
+        "logo": "./assets/icon.png",
+        "composerIcon": "./assets/icon.png"
       }
     }
   }

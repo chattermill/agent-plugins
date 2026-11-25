@@ -93,6 +93,14 @@ git commit -am "Update chattermill-best-practices" && git push
 
 `bump-version.sh` writes the version into all four manifests that carry one, so the agents stay in step.
 
+To upload a release to OpenAI's plugin portal (ChatGPT and Codex), build the ZIP with:
+
+```bash
+./scripts/package-chatgpt.sh
+```
+
+It writes `dist/chattermill-chatgpt-<version>.zip`. The portal only accepts an update when the package name is its existing entry's ID, so the script swaps that ID into the ZIP's `plugin.json`. The repo keeps the name `chattermill`. Don't upload a ZIP downloaded from GitHub: it has the wrong name and includes every other agent's files.
+
 ## Support
 
 Email [support@chattermill.com](mailto:support@chattermill.com), or read [Chattermill MCP server](https://docs.chattermill.com/en/articles/13943134-chattermill-mcp-server) in the Chattermill docs. Terms and privacy policy: [chattermill.com/legal](https://chattermill.com/legal).

@@ -35,6 +35,57 @@
         "brandColor": "#10C2ED",
         "logo": "./assets/icon.png",
         "composerIcon": "./assets/icon.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Rank the most common complaints. Covers theme discovery and quantitative breakdowns.",
+              "prompt": "What are customers complaining about most in the last 90 days? Rank the top 5 topics by number of negative mentions.",
+              "tools_triggered": "list_themes, get_metrics",
+              "expected_behavior": "Lists up to 5 themes from the test project ranked by negative mention count, with the count for each and the date range used. Uses theme names that exist in the project and does not invent topics or numbers."
+            },
+            {
+              "description": "Read customer comments on a topic. Covers theme filters and verbatim retrieval.",
+              "prompt": "Find the theme with the most negative feedback in the last 30 days and show me 5 customer comments about it.",
+              "tools_triggered": "list_themes, get_metrics, get_feedback",
+              "expected_behavior": "Names the theme with the most negative feedback in the last 30 days, then quotes 5 real customer comments tagged with that theme, each with its date. Comments are quoted as returned, not paraphrased into new wording."
+            },
+            {
+              "description": "Track a score over time. Covers metric trends.",
+              "prompt": "How has our NPS changed month by month over the last 6 months?",
+              "tools_triggered": "get_metrics",
+              "expected_behavior": "Gives the NPS for each of the last 6 months from the test project and says which way it moved overall. If the project has no NPS data, says so instead of estimating."
+            },
+            {
+              "description": "Explain what drives a score. Covers impact (driver) analysis.",
+              "prompt": "What is pulling our NPS down this quarter? Give me the top 3 drivers.",
+              "tools_triggered": "get_impact",
+              "expected_behavior": "Lists the 3 themes with the largest negative contribution to NPS this quarter, with each theme's contribution in points, and states the quarter's dates."
+            },
+            {
+              "description": "Read a saved dashboard. Covers dashboards and saved reports.",
+              "prompt": "List my Chattermill dashboards, then summarise what the most recently updated one shows.",
+              "tools_triggered": "list_dashboards, get_dashboard, get_metrics",
+              "expected_behavior": "Lists the dashboards in the test project, opens the most recently updated one, and summarises its main widgets with the figures they show and the date range applied."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Sending surveys. Chattermill analyses feedback but does not send surveys, so the plugin should not be used.",
+              "prompt": "Send an NPS survey to everyone who bought from us last month."
+            },
+            {
+              "description": "Replying to a customer. The plugin is read-only and cannot contact customers or update support tickets.",
+              "prompt": "Reply to the customer who complained about late delivery and offer them a refund."
+            },
+            {
+              "description": "General knowledge. Explaining how NPS works needs no customer data, so no Chattermill tools should be called.",
+              "prompt": "Explain how NPS is calculated and what counts as a good score."
+            }
+          ]
+        },
+        "commerce": false
       }
     }
   }

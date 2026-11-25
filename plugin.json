@@ -26,8 +26,21 @@
       "interface": {
         "displayName": "Chattermill",
         "shortDescription": "Analyse customer feedback",
-        "longDescription": "Connect your AI agent to Chattermill customer feedback. Includes the Chattermill MCP server (sign in with your Chattermill account) and the chattermill-best-practices skill, which covers discovery, filters and deep links back into the app.",
+        "longDescription": "Chattermill is a customer feedback analytics platform. It brings survey responses, app reviews, support tickets and social posts into one place, groups them into themes and tracks scores such as NPS and CSAT.\n\nThis plugin lets customer experience, product and insights teams who use Chattermill ask questions about their own feedback data in plain language. You can:\n- rank the topics customers praise or complain about most in a period\n- read real customer comments on a theme, segment or keyword\n- follow NPS, CSAT, sentiment or volume over time\n- see which themes push a score up or down\n- read saved Chattermill dashboards and reports\n\nAnswers come from the projects your Chattermill account can access, and include links back to the same view in the Chattermill app. The plugin also includes guidance that helps the model look up the right themes and filters before it queries, so the numbers match what the app shows.\n\nLimitations: you need a Chattermill account, and you sign in with it. It doesn't change your feedback data or settings: it can't send surveys, reply to customers or edit themes. It covers only the feedback already in your Chattermill projects, not the open web.",
         "developerName": "Chattermill",
+        "category": "Data & Analytics",
+        "capabilities": [
+          "Rank the themes customers mention most",
+          "Read customer comments by theme, segment or keyword",
+          "Track NPS, CSAT and sentiment over time",
+          "Find the themes that drive NPS up or down",
+          "Read Chattermill dashboards and reports"
+        ],
+        "defaultPrompt": [
+          "What are customers complaining about most this quarter?",
+          "What's driving our NPS down this month?",
+          "Show me recent customer comments about delivery."
+        ],
         "websiteURL": "https://chattermill.com",
         "supportURL": "https://chattermill.com/contact",
         "privacyPolicyURL": "https://chattermill.com/legal/privacy-cookie-policy",
@@ -76,7 +89,7 @@
               "prompt": "Send an NPS survey to everyone who bought from us last month."
             },
             {
-              "description": "Replying to a customer. The plugin is read-only and cannot contact customers or update support tickets.",
+              "description": "Replying to a customer. The plugin can't contact customers or update support tickets.",
               "prompt": "Reply to the customer who complained about late delivery and offer them a refund."
             },
             {
